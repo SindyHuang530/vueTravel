@@ -44,7 +44,7 @@ export default {
   overflow: hidden;
   width: auto;
   height: auto;
-  background: #fff;
+  background: rgb(237, 222, 222);
 }
 .swiper-img {
   width: 100%;
