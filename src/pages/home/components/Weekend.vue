@@ -3,7 +3,7 @@
     <div class="title">Weekend can we go?</div>
     <div class="items">
       <ul>
-        <li class="item" v-for="item of recommendList" :key="item.id">
+        <li class="item" v-for="item of weekendList" :key="item.id">
           <img class="item-img" :src="item.imgSrc" />
           <div class="item-info">
             <p class="item-title">{{ item.title }}</p>
@@ -15,31 +15,12 @@
   </div>
 </template>
 <script>
-import img1 from '@/assets/img/travel-3.jpg'
+import { weekendList } from '@/api/home/home'
 export default {
   name: 'HomeWeekend',
   data() {
     return {
-      recommendList: [
-        {
-          id: '0001',
-          imgSrc: img1,
-          title: '快樂小世界',
-          desc: '快樂地方有快樂的小人物',
-        },
-        {
-          id: '0002',
-          imgSrc: img1,
-          title: '冰天雪地世界',
-          desc: '神秘地方有艾紗',
-        },
-        {
-          id: '0003',
-          imgSrc: img1,
-          title: '奇幻世界',
-          desc: '一切都是幻覺的世界有奇幻旅程',
-        },
-      ],
+      weekendList,
     }
   },
 }

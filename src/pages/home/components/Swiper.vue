@@ -11,9 +11,7 @@
 </template>
 
 <script>
-import pic1Src from '@/assets/img/travel-1.jpg'
-import pic2Src from '@/assets/img/travel-2.jpg'
-
+import { swiperList } from '@/api/home/home'
 export default {
   name: 'HomeSwiper',
   data() {
@@ -21,16 +19,7 @@ export default {
       swiperOptions: {
         pagination: '.swiper-pagination',
       },
-      swiperList: [
-        {
-          id: '0001',
-          src: pic1Src,
-        },
-        {
-          id: '0002',
-          src: pic2Src,
-        },
-      ],
+      swiperList,
     }
   },
 }
