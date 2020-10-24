@@ -2,6 +2,15 @@ import img1 from '@/assets/img/item-1.jpg'
 import pic1Src from '@/assets/img/travel-1.jpg'
 import pic2Src from '@/assets/img/travel-2.jpg'
 import img2 from '@/assets/img/travel-3.jpg'
+import picIcon1 from '@/assets/img/icon-1.jpg'
+import picIcon2 from '@/assets/img/icon-2.jpg'
+import picIcon3 from '@/assets/img/icon-3.jpg'
+import picIcon4 from '@/assets/img/icon-4.jpg'
+import picIcon5 from '@/assets/img/icon-5.jpg'
+import picIcon6 from '@/assets/img/icon-6.jpg'
+import picIcon7 from '@/assets/img/icon-7.jpg'
+import picIcon8 from '@/assets/img/icon-8.jpg'
+
 
 export const recommendList = [
     {
@@ -66,4 +75,44 @@ export const weekendList = [
         desc: '一切都是幻覺的世界有奇幻旅程',
     },
 
+]
+
+export const iconList = [
+    {
+        id: '0001',
+        imgSrc: picIcon1,
+        desc: 'Hotel',
+    },
+    {
+        id: '0002',
+        imgSrc: picIcon2,
+        desc: 'Day trip',
+    }, {
+
+        id: '0003',
+        imgSrc: picIcon3,
+        desc: 'Hiking',
+    }
+    , {
+        id: '0004',
+        imgSrc: picIcon4,
+        desc: 'Bus',
+    }, {
+        id: '0005',
+        imgSrc: picIcon5,
+        desc: 'Spots',
+    }, {
+
+        id: '0006',
+        imgSrc: picIcon6,
+        desc: 'Swiming',
+    }, {
+        id: '0007',
+        imgSrc: picIcon7,
+        desc: 'Ski',
+    }, {
+        id: '0008',
+        imgSrc: picIcon8,
+        desc: 'Camping',
+    },
 ]
