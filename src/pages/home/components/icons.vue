@@ -1,53 +1,26 @@
 <template>
-  <div class="icons">
-    <div class="icon-img">
-      <img src="@/assets/img/icon-1.jpg" />
-      <p class="icon-words">Hotel</p>
-    </div>
-    <div class="icon-img">
-      <img src="@/assets/img/icon-2.jpg" />
-      <p class="icon-words">Day trip</p>
-    </div>
-    <div class="icon-img">
-      <img src="@/assets/img/icon-3.jpg" />
-      <p class="icon-words">Hiking</p>
-    </div>
-    <div class="icon-img">
-      <img src="@/assets/img/icon-4.jpg" />
-      <p class="icon-words">Bus</p>
-    </div>
-    <div class="icon-img">
-      <img src="@/assets/img/icon-5.jpg" />
-      <p class="icon-words">Spots</p>
-    </div>
-
-    <div class="icon-img">
-      <img src="@/assets/img/icon-6.jpg" />
-      <p class="icon-words">Swiming</p>
-    </div>
-
-    <div class="icon-img">
-      <img src="@/assets/img/icon-7.jpg" />
-      <p class="icon-words">Ski</p>
-    </div>
-    <div class="icon-img">
-      <img src="@/assets/img/icon-8.jpg" />
-      <p class="icon-words">Camping</p>
+  <div class="iconList">
+    <div class="icon-img" v-for="item of iconList" :key="item.id">
+      <img :src="item.imgSrc" />
+      <p class="icon-words">{{ item.desc }}</p>
     </div>
   </div>
 </template>
 <script>
+import { iconList } from '@/api/home/home'
 export default {
   name: 'HomeIcons',
+  data() {
+    return {
+      iconList,
+    }
+  },
 }
 </script>
 
 
-
-
-
 <style lang="scss" scoped>
-.icons {
+.iconList {
   height: 210px;
   background: rgb(242, 210, 146);
   display: flex;
