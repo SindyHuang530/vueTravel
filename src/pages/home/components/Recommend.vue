@@ -3,8 +3,8 @@
     <div class="title">Hot Recommend</div>
     <div class="items">
       <ul>
-        <li class="item" v-for="item of recommendList" :key="item.id">
-          <img class="item-img" :src="item.imgSrc" />
+        <li class="item" v-for="item of list" :key="item.id">
+          <img class="item-img" :src="imgPath(item.imgSrc)" />
           <div class="item-info">
             <p class="item-title">{{ item.title }}</p>
             <p class="item-desc">{{ item.desc }}</p>
@@ -16,14 +16,16 @@
   </div>
 </template>
 <script>
-import { recommendList } from '@/api/home/home'
 export default {
   name: 'HomeRecommend',
-  data() {
-    return {
-      recommendList,
-    }
+  props: {
+    list: Array
   },
+  methods: {
+    imgPath(pic) {
+      return require(`../../../assets/img/${pic}`)
+    }
+  }
 }
 </script>
 
@@ -33,15 +35,15 @@ export default {
   line-height: 2.3rem;
   font-size: 1.5rem;
   padding-left: 1rem;
-  background: #c9c8c8;
+  background: #e7e8e9;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .items {
-  background-color: rgb(120, 197, 199);
+  background-color: white;
 }
 .item {
   display: flex;
-  border-bottom: solid #c9c8c8 0.1rem;
+  border-bottom: solid #e7e8e9 0.1rem;
   &-img {
     width: 4.5rem;
     height: 4.5rem;
@@ -57,7 +59,7 @@ export default {
   }
   &-desc {
     @include ellipsis;
-    color: rgb(14, 52, 118);
+    color: #e7e8e9;
   }
   &-button {
     background-color: rgb(238, 230, 105);

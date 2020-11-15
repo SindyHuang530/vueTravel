@@ -8,7 +8,7 @@
       Enter destinations
     </div>
     <div class="header-right">
-      City
+      {{ this.city }}
       <span class="iconfont">&#xe665;</span>
     </div>
   </div>
@@ -17,6 +17,9 @@
 <script>
 export default {
   name: 'HomeHeader',
+  props: {
+    city: String,
+  },
 }
 </script>
 

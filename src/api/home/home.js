@@ -1,6 +1,4 @@
 import img1 from '@/assets/img/item-1.jpg'
-import pic1Src from '@/assets/img/travel-1.jpg'
-import pic2Src from '@/assets/img/travel-2.jpg'
 import img2 from '@/assets/img/travel-3.jpg'
 import picIcon1 from '@/assets/img/icon-1.jpg'
 import picIcon2 from '@/assets/img/icon-2.jpg'
@@ -44,16 +42,7 @@ export const recommendList = [
         desc: '一起來月球搗麻糬',
     },
 ]
-export const swiperList = [
-    {
-        id: '0001',
-        src: pic1Src,
-    },
-    {
-        id: '0002',
-        src: pic2Src,
-    },
-]
+
 
 export const weekendList = [
     {

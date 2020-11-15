@@ -1,49 +1,99 @@
 <template>
-  <div class="iconList">
-    <div class="icon-img" v-for="item of iconList" :key="item.id">
-      <img :src="item.imgSrc" />
-      <p class="icon-words">{{ item.desc }}</p>
-    </div>
+  <div class="icons">
+    <swiper :options="swiperOptions" v-if="showIcon">
+    <swiper-slide v-for="(page,index) of pages" :key="index">
+      <div class="icon" v-for="item of page" :key="item.id">
+      <div class="icon-img">
+      <img class="icon-img-content" :src="imgPath(item.imgSrc)" />
+      </div>
+      <p class="icon-desc">{{ item.desc }}</p>
+      </div>
+    </swiper-slide>
+    </swiper>
   </div>
 </template>
 <script>
-import { iconList } from '@/api/home/home'
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array,
+  },
   data() {
     return {
-      iconList,
+     swiperOptions: {
+       loop:false,
+       autoplay:false
+       }
     }
   },
+  methods: {
+    imgPath(pic) {
+      return require(`../../../assets/img/${pic}`)
+    } 
+  },
+  computed:{
+    showIcon(){
+      return this.list.length
+    },
+    pages(){
+      const pages = []
+      this.list.forEach((item,index)=> {
+        const i = Math.floor(index / 8)
+        if (!pages[i]){
+            pages[i]=[]
+        }
+        pages[i].push(item)
+      })
+        console.log(pages)
+
+      return pages
+    }
+  }
 }
 </script>
 
 
 <style lang="scss" scoped>
-.iconList {
-  height: 210px;
-  background: rgb(242, 210, 146);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
-  justify-content: center;
+.icons >>> .swiper-container
+.icons {
+  overflow: hidden;
   width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  margin-top: .2rem;
 }
-
+.icon{
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 25%;
+  height: 0;
+  padding-bottom: 25%;
+}
 .icon-img {
-  flex: 1;
-  img {
-    width: 80px;
-    height: 80px;
-    padding-top: 3px;
-    padding-left: 5px;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: .5rem;
+  box-sizing: border-box;
+  padding: .5rem;
 }
+.icon-img-content{
+  display: block;
+  margin: .1rem auto;
 
-.icon-words {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 18px;
+  height: 100%;
+  }
+
+.icon-desc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: .7rem;
+  line-height: .20rem;
   text-align: center;
-  color: black;
+  color:black;
 }
 </style>
