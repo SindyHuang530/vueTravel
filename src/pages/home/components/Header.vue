@@ -5,7 +5,7 @@
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe67d;</span>
-      Enter destinations
+      Destinations,tours...
     </div>
     <router-link to="/city">
       <div class="header-right">
@@ -34,7 +34,7 @@ export default {
   height: $headerHeight;
   display: flex;
   align-items: center;
-  background: #bgColor;
+  background: $bgColor;
   color: #fff;
   &-left {
     width: 25px;
