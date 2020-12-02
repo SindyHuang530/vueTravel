@@ -7,10 +7,12 @@
       <span class="iconfont">&#xe67d;</span>
       Enter destinations
     </div>
-    <div class="header-right">
-      {{ this.city }}
-      <span class="iconfont">&#xe665;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{ this.city }}
+        <span class="iconfont">&#xe665;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -18,11 +20,10 @@
 export default {
   name: 'HomeHeader',
   props: {
-    city: String,
-  },
+    city: String
+  }
 }
 </script>
-
 
 <style lang="scss" scoped>
 /*1rem = html font-size = 50px 
@@ -30,14 +31,15 @@ export default {
 @import '@/assets/styles/varibles';
 
 .header {
-  height: 43px;
+  height: $headerHeight;
   display: flex;
   align-items: center;
-  background: #00bcd4;
+  background: #bgColor;
   color: #fff;
   &-left {
     width: 25px;
     text-align: center;
+    color: #fff;
   }
   &-input {
     flex: 1;
@@ -54,4 +56,4 @@ export default {
     text-align: center;
   }
 }
-</style> 
+</style>
