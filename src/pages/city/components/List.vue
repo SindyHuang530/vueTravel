@@ -1,67 +1,73 @@
 <template>
-  <div class="list">
-    <div class="area">
-      <div class="title">當前City</div>
-      <div class="button-list">
-        <div class="button-wrapper">
-          <div class="button">北京</div>
+  <div class="list" ref="wrapper">
+    <div class="content">
+      <div class="area">
+        <div class="title">當前City</div>
+        <div class="button-list">
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="title">熱門City</div>
-      <div class="button-list">
-        <div class="button-wrapper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">北京</div>
+      <div class="area">
+        <div class="title">熱門City</div>
+        <div class="button-list">
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="title">Ａ</div>
-      <div class="item-list">
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-      </div>
-      <div class="title">Ａ</div>
-      <div class="item-list">
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-      </div>
-      <div class="title">Ａ</div>
-      <div class="item-list">
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
-        <div class="item">阿拉爾</div>
+      <div class="area">
+        <div class="title">Ａ</div>
+        <div class="item-list">
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+        </div>
+        <div class="title">Ａ</div>
+        <div class="item-list">
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+        </div>
+        <div class="title">Ａ</div>
+        <div class="item-list">
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+          <div class="item">阿拉爾</div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import Bscroll from '@better-scroll/core'
 export default {
-  name: 'CityList'
+  name: 'CityList',
+  mounted() {
+    this.scroll = new Bscroll(this.$refs.wrapper)
+  }
 }
 </script>
 <style lang="scss" scoped>
