@@ -36,6 +36,7 @@ export default {
   padding-left: 1rem;
   background: #e7e8e9;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(130, 129, 129);
 }
 .items {
   background-color: white;
@@ -51,7 +52,7 @@ export default {
   }
   &-desc {
     @include ellipsis;
-    color: #e7e8e9;
+    color: rgb(130, 129, 129);
   }
 }
 </style>

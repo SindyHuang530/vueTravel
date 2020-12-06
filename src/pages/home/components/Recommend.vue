@@ -36,6 +36,7 @@ export default {
   font-size: 1.5rem;
   padding-left: 1rem;
   background: #e7e8e9;
+  color: rgb(130, 129, 129);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .items {
@@ -45,24 +46,24 @@ export default {
   display: flex;
   border-bottom: solid #e7e8e9 0.1rem;
   &-img {
-    width: 4.5rem;
-    height: 4.5rem;
-    padding: 0.3rem;
+    width: 4.2rem;
+    height: 4.2rem;
+    margin: 0.27rem;
   }
 
   &-info {
     flex: 1;
     min-width: 0;
     p {
-      line-height: 1.7rem;
+      line-height: 1.5rem;
     }
   }
   &-desc {
     @include ellipsis;
-    color: #e7e8e9;
+    color: rgb(130, 129, 129);
   }
   &-button {
-    background-color: rgb(238, 230, 105);
+    background-color: rgb(247, 238, 113);
     border-radius: 0.3rem;
     padding: 0.1rem;
   }
