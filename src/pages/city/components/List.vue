@@ -18,8 +18,8 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item, key) of city" :key="key">
-        <!-- cities是一個Object -->
+      <div class="area" v-for="(item, key) of city" :key="key" :ref="key">
+        <!-- cities是一個Object,key=字母ＡorB.... -->
         <div class="title">{{ key }}</div>
         <div class="item-list">
           <div class="item" v-for="(innerItem, akey) of item" :key="akey">
@@ -36,12 +36,22 @@ export default {
   name: 'CityList',
   props: {
     hot: Array,
-    city: Object
+    city: Object,
+    letter: String
   },
   mounted() {
     this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter() {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
+// 監聽letter有沒有變化, 如果有就會執行if
 </script>
 <style lang="scss" scoped>
 @import '@/assets/styles/varibles';
