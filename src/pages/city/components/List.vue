@@ -12,50 +12,19 @@
       <div class="area">
         <div class="title">熱門City</div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
+          <div class="button-wrapper" v-for="item of hot" :key="item.id">
+            <div class="button">{{ item.name }}</div>
+            <!-- name是回去看json怎麼定義 -->
           </div>
         </div>
       </div>
-      <div class="area">
-        <div class="title">Ａ</div>
+      <div class="area" v-for="(item, key) of city" :key="key" :ref="key">
+        <!-- cities是一個Object,key=字母ＡorB.... -->
+        <div class="title">{{ key }}</div>
         <div class="item-list">
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-        </div>
-        <div class="title">Ａ</div>
-        <div class="item-list">
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-        </div>
-        <div class="title">Ａ</div>
-        <div class="item-list">
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
-          <div class="item">阿拉爾</div>
+          <div class="item" v-for="(innerItem, akey) of item" :key="akey">
+            {{ innerItem.name }}
+          </div>
         </div>
       </div>
     </div>
@@ -65,10 +34,24 @@
 import Bscroll from '@better-scroll/core'
 export default {
   name: 'CityList',
+  props: {
+    hot: Array,
+    city: Object,
+    letter: String
+  },
   mounted() {
     this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter() {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
+// 監聽letter有沒有變化, 如果有就會執行if
 </script>
 <style lang="scss" scoped>
 @import '@/assets/styles/varibles';
@@ -96,6 +79,7 @@ export default {
   text-align: center;
   border-radius: 0.2rem;
   color: rgb(143, 142, 142);
+  line-height: 1.3rem;
 }
 .item {
   color: rgb(143, 142, 142);

@@ -1,20 +1,78 @@
 <template>
   <ul class="list">
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
+    <li
+      class="item"
+      v-for="item of letters"
+      :key="item"
+      :ref="item"
+      @touchstart="handleTouchStart"
+      @touchmove="handleTouchMove"
+      @touchend="handleTouchEnd"
+      @click="handleLetterClick"
+    >
+      {{ item }}
+    </li>
   </ul>
+  <!-- 
+  手指放在螢幕上上面就觸發
+  手指在螢幕上滑動時連續觸發
+  手指離開螢幕時觸發
+   -->
 </template>
 
 <script>
 export default {
-  name: 'CityAlphabet'
+  name: 'CityAlphabet',
+  props: {
+    city: Object
+  },
+  computed: {
+    letters() {
+      const letters = []
+      for (let i in this.city) {
+        letters.push(i)
+      }
+      return letters
+    }
+  },
+  data() {
+    return {
+      touchStatus: false,
+      // 沒有點擊觸發所以false
+      startY: 0,
+      timer: null
+    }
+  },
+  updated() {
+    this.startY = this.$refs['A'][0].offsetTop
+  },
+  methods: {
+    handleLetterClick(e) {
+      this.$emit('change', e.target.innerText)
+    },
+    handleTouchStart() {
+      this.touchStatus = true
+    },
+    handleTouchMove(e) {
+      if (this.touchStatus) {
+        if (this.timer) {
+          clearTimeout(this.timer)
+        }
+        this.timer = setTimeout(() => {
+          const touchY = e.touches[0].clientY - 66
+          const index = Math.floor((touchY - this.startY) / 26)
+          if (index >= 0 && index < this.letters.length) {
+            this.$emit('change', this.letters[index])
+          }
+        }, 16)
+      }
+    },
+    handleTouchEnd() {
+      this.touchStatus = false
+    }
+  }
 }
+//  兄弟組件：向city.vue傳訊息然後city.vue再傳給list.vue
 </script>
 
 <style lang="scss" scoped>
@@ -26,9 +84,9 @@ export default {
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  top: -6.59rem;
-  right: 0.5rem;
-  width: 0.4rem;
+  top: 0.2rem;
+  right: 0.6rem;
+  width: 0.3rem;
   bottom: 0;
   color: cadetblue;
   margin: 0.1rem;
