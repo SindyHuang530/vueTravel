@@ -54,5 +54,9 @@ export default {
     @include ellipsis;
     color: rgb(130, 129, 129);
   }
+  &-img {
+    width: 100%;
+    height: 7.2rem;
+  }
 }
 </style>

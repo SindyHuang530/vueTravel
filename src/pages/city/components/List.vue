@@ -5,14 +5,19 @@
         <div class="title">當前City</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">北京</div>
+            <div class="button">{{ this.currentCity }}</div>
           </div>
         </div>
       </div>
       <div class="area">
         <div class="title">熱門City</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item of hot" :key="item.id">
+          <div
+            class="button-wrapper"
+            v-for="item of hot"
+            :key="item.id"
+            @click="handleCityClick(item.name)"
+          >
             <div class="button">{{ item.name }}</div>
             <!-- name是回去看json怎麼定義 -->
           </div>
@@ -22,7 +27,12 @@
         <!-- cities是一個Object,key=字母ＡorB.... -->
         <div class="title">{{ key }}</div>
         <div class="item-list">
-          <div class="item" v-for="(innerItem, akey) of item" :key="akey">
+          <div
+            class="item"
+            v-for="(innerItem, akey) of item"
+            :key="akey"
+            @click="handleCityClick(innerItem.name)"
+          >
             {{ innerItem.name }}
           </div>
         </div>
@@ -31,6 +41,7 @@
   </div>
 </template>
 <script>
+import { mapState, mapMutations } from 'vuex'
 import Bscroll from '@better-scroll/core'
 export default {
   name: 'CityList',
@@ -39,8 +50,17 @@ export default {
     city: Object,
     letter: String
   },
-  mounted() {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    })
+  },
+  methods: {
+    handleCityClick(city) {
+      this.changrCity(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
   },
   watch: {
     letter() {
@@ -49,6 +69,9 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  mounted() {
+    this.scroll = new Bscroll(this.$refs.wrapper)
   }
 }
 // 監聽letter有沒有變化, 如果有就會執行if

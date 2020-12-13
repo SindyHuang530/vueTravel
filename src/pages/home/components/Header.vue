@@ -7,7 +7,7 @@
       <span class="iconfont">&#xe67d;</span>
       Destinations,tours...
     </div>
-    <router-link to="/city">
+    <router-link class="city" to="/city">
       <div class="header-right">
         {{ this.city }}
         <span class="iconfont">&#xe665;</span>
@@ -17,10 +17,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
+  computed: {
+    ...mapState(['city'])
+    // ...mapGetters(['doubleCity'])
   }
 }
 </script>
@@ -37,7 +39,7 @@ export default {
   background: $bgColor;
   color: #fff;
   &-left {
-    width: 25px;
+    width: 1.2rem;
     text-align: center;
     color: #fff;
   }
@@ -46,14 +48,18 @@ export default {
     background: #fff;
     border-radius: 5px;
     height: 30px;
-    margin-left: 5px;
+    margin-right: 8px;
     line-height: 29px;
     text-align: center;
     color: #ccc;
   }
   &-right {
-    width: 60px;
+    min-width: 2rem;
     text-align: center;
+    color: #fff;
   }
+}
+.city {
+  text-decoration: none;
 }
 </style>

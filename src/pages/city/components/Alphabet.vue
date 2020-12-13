@@ -86,9 +86,15 @@ export default {
   position: absolute;
   top: 0.2rem;
   right: 0.6rem;
-  width: 0.3rem;
+  width: 0.62rem;
   bottom: 0;
+  margin-top: 7.2rem;
+
   color: cadetblue;
-  margin: 0.1rem;
+  padding-left: 0.18rem;
+}
+.item {
+  height: 1.2rem;
+  width: 1.2rem;
 }
 </style>
