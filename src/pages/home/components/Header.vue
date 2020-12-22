@@ -23,6 +23,7 @@ export default {
   computed: {
     ...mapState(['city'])
     // ...mapGetters(['doubleCity'])
+    //如果要使用的話要重新import
   }
 }
 </script>
