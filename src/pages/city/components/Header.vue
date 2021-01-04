@@ -3,7 +3,9 @@
     Choose City
     <router-link to="/">
       <div class="header-left">
-        <span class="iconfont header-back">&#xe685;</span>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#iconarrow-down"></use>
+        </svg>
       </div>
     </router-link>
   </div>
@@ -30,7 +32,7 @@ export default {
     left: 0;
     width: 2.5rem;
   }
-  .iconfont {
+  .icon {
     color: #fff;
   }
 }

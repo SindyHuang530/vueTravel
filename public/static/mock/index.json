@@ -5,11 +5,11 @@
         "swiperList": [
             {
                 "id": "0001",
-                "imgSrc": "travel-1.jpg"
+                "imgSrc": "swiper-1.jpg"
             },
             {
                 "id": "0002",
-                "imgSrc": "travel-2.jpg"
+                "imgSrc": "swiper-2.jpg"
             }
         ],
         "iconList": [
@@ -62,48 +62,51 @@
         "recommendList": [
             {
                 "id": "0001",
-                "imgSrc": "item-1.jpg",
-                "title": "快樂小世界",
-                "desc": "快樂地方有快樂的小人物"
+                "imgSrc": "recommend-1.jpg",
+                "title": "農場探險",
+                "desc": "慢活旅遊體驗"
             },
             {
                 "id": "0002",
-                "imgSrc": "item-1.jpg",
-                "title": "冰天雪地世界",
-                "desc": "神秘地方有艾紗"
+                "imgSrc": "recommend-2.jpg",
+                "title": "漫步森林",
+                "desc": "賞星賞月浪漫之夜"
             },
             {
                 "id": "0003",
-                "imgSrc": "item-1.jpg",
-                "title": "奇幻世界",
-                "desc": "一切都是幻覺的世界有奇幻旅程"
+                "imgSrc": "recommend-3.jpg",
+                "title": "離島冒險",
+                "desc": "跳島新玩法"
             },
             {
                 "id": "0004",
-                "imgSrc": "item-1.jpg",
-                "title": "炎熱非洲王國",
-                "desc": "赤炎炎的太陽配上熱情的動物"
+                "imgSrc": "recommend-4.jpg",
+                "title": "度假村",
+                "desc": "慢活悠閒"
             }
         ],
         "weekendList": [
             {
                 "id": "0001",
-                "imgSrc": "travel-3.jpg",
-                "title": "快樂小世界",
-                "desc": "快樂地方有快樂的小人物"
+                "imgSrc": "travel-1.jpg",
+                "title": "渡輪旅遊",
+                "desc": "環遊世界開闊眼界"
             },
             {
                 "id": "0002",
-                "imgSrc": "travel-3.jpg",
-                "title": "冰天雪地世界",
-                "desc": "神秘地方有艾紗"
-            },
-            {
-                "id": "0003",
-                "imgSrc": "travel-3.jpg",
-                "title": "奇幻世界",
-                "desc": "一切都是幻覺的世界有奇幻旅程"
+                "imgSrc": "travel-2.jpg",
+                "title": "賞楓",
+                "desc": "秋日世界浪漫無限"
             }
+        ],
+        "bannerList":[
+            {
+                "id": "0001",
+                "imgSrc": "banner-1.jpg",
+                "title": "meseum",
+                "desc": "meseum"
+            }
+
         ]
     }
 }

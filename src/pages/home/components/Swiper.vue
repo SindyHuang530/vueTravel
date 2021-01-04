@@ -4,7 +4,6 @@
       <swiper-slide v-for="item of list" :key="item.id">
         <img class="swiper-img" :src="imgPath(item.imgSrc)" />
       </swiper-slide>
-
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
@@ -48,6 +47,7 @@ export default {
 }
 .swiper-img {
   width: 100%;
+  height: 11.97rem;
 }
 
 .swiper-pagination {

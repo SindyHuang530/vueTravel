@@ -3,14 +3,20 @@
     <div class="title">Hot Recommend</div>
     <div class="items">
       <ul>
-        <li class="item" v-for="item of list" :key="item.id">
+        <router-link
+          tag="li"
+          class="item"
+          v-for="item of list"
+          :key="item.id"
+          :to="'/detail/' + item.id"
+        >
           <img class="item-img" :src="imgPath(item.imgSrc)" />
           <div class="item-info">
             <p class="item-title">{{ item.title }}</p>
             <p class="item-desc">{{ item.desc }}</p>
             <button class="item-button">Check Now</button>
           </div>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>
@@ -63,8 +69,9 @@ export default {
     color: rgb(130, 129, 129);
   }
   &-button {
-    background-color: rgb(247, 238, 113);
+    background-color: rgb(245, 241, 184);
     border-radius: 0.3rem;
+    border-color: rgb(245, 241, 184);
     padding: 0.1rem;
   }
 }

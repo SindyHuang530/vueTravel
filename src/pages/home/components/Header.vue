@@ -1,16 +1,21 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <span class="iconfont">&#xe685;</span>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#iconarrow-left-bold"></use>
+      </svg>
     </div>
     <div class="header-input">
-      <span class="iconfont">&#xe67d;</span>
-      Destinations,tours...
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#iconsearch"></use>
+      </svg>
     </div>
     <router-link class="city" to="/city">
       <div class="header-right">
         {{ this.city }}
-        <span class="iconfont">&#xe665;</span>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#iconarrow-down"></use>
+        </svg>
       </div>
     </router-link>
   </div>

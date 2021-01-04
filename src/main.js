@@ -7,7 +7,8 @@ import store from './store'
 require('./assets/styles/swiper-bundle.css')
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
-import './assets/styles/iconfont.css'
+import './assets/styles/iconfont/iconfont.js'
+import './assets/styles/iconfont/iconfont.css'
 import './assets/styles/border.css'
 Vue.config.productionTip = false
 fastClick.attach(document.body)
